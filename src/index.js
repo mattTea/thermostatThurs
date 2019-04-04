@@ -1,9 +1,10 @@
 var thermostat = new Thermostat
 
 $(document).ready(function() {
-  var refreshValues = function() {
+  function refreshValues() {
     $("#current-temperature").text(thermostat.currentTemperature());
     $("#energy-usage").text(thermostat.energyUsage());
+    $("body").attr('class', thermostat.energyUsage());
   }
 
   refreshValues();

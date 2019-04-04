@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="style/stylesheet.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="src/thermostat.js"></script>
   <script type="text/javascript" src="src/index.js"></script>
 </head>
 
+<body class="medium-usage">
+  <h1>Thermostat</h1>
 
-<h1>Thermostat</h1>
+  <h3>Current Temperature: <span id="current-temperature">loading...</span></h3>
 
-<h3>Current Temperature: <span id="current-temperature">loading...</span></h3>
+  <h3>Energy Usage Level: <span id="energy-usage">hmm...</span></h3>
 
-<h3>Energy Usage Level: <span id="energy-usage">hmm...</span></h3>
+  <button id="up-button">Up</button>
+  <button id="down-button">Down</button>
 
-<button id="up-button">Up</button>
-<button id="down-button">Down</button>
+  <input type="radio" name="power-saving-mode" id="power-saving-on" value="on" checked> Power Saving On
+  <input type="radio" name="power-saving-mode" id="power-saving-off" value="off"> Power Saving Off
 
-<input type="radio" name="power-saving-mode" id="power-saving-on" value="on" checked> Power Saving On
-<input type="radio" name="power-saving-mode" id="power-saving-off" value="off"> Power Saving Off
-
-<button id="reset">Reset</button>
+  <button id="reset">Reset</button>
+</body>
 
 </html>
