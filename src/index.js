@@ -1,6 +1,10 @@
 var thermostat = new Thermostat
 
+
 $(document).ready(function() {
+
+  var apiLink = "http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=ad83bbf27660822a5ded0d83f34dc0b9"
+
   function refreshValues() {
     $("#current-temperature").text(thermostat.currentTemperature());
     $("#energy-usage").text(thermostat.energyUsage());
@@ -8,6 +12,10 @@ $(document).ready(function() {
   }
 
   refreshValues();
+
+  $.get("http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=ad83bbf27660822a5ded0d83f34dc0b9", function(weatherResponse) {
+    $("#temperature-outside").text(weatherResponse.main.temp);
+  });
 
   $("#up-button").click(function() {
     thermostat.up();
