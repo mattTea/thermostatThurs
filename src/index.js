@@ -1,18 +1,21 @@
 var thermostat = new Thermostat
 
 $(document).ready(function() {
+  var refreshValues = function() {
+    $("#current-temperature").text(thermostat.currentTemperature());
+    $("#energy-usage").text(thermostat.energyUsage());
+  }
 
-  console.log("Loaded");
+  refreshValues();
+
   $("#up-button").click(function() {
     thermostat.up();
-    $("#current-temperature").text(thermostat.currentTemperature());
+    refreshValues();
   });
 
   $("#down-button").click(function(){
     thermostat.down();
-    $("#current-temperature").text(thermostat.currentTemperature());
+    refreshValues();
   });
-
-  $("#current-temperature").text(thermostat.currentTemperature());
 });
 
