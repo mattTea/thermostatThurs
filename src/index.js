@@ -13,9 +13,23 @@ $(document).ready(function() {
     refreshValues();
   });
 
-  $("#down-button").click(function(){
+  $("#down-button").click(function() {
     thermostat.down();
     refreshValues();
   });
-});
 
+  $("#power-saving-on").click(function() {
+    thermostat.powerSavingOn();
+    refreshValues();
+  });
+
+  $("#power-saving-off").click(function() {
+    thermostat.powerSavingOff();
+  });
+
+  $("#reset").click(function() {
+    thermostat.reset();
+    refreshValues();
+  })
+
+});

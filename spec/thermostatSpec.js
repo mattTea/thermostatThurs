@@ -36,6 +36,15 @@ describe("Thermostat", function(){
     expect(thermostat.currentTemperature()).toEqual(25);
   });
 
+  it("reduces temperature back to 25 degress when power saving is switched on", function() {
+    thermostat.powerSavingOff();
+    for (var i = 1; i <= 10; i++) {
+      thermostat.up();
+    }
+    thermostat.powerSavingOn();
+    expect(thermostat.currentTemperature()).toEqual(thermostat.POWER_SAVING_MAX);
+  });
+
   it("increases temperature beyond power saving max when power saving is off", function() {
     thermostat.powerSavingOff();
     for (var i = 1; i <= 10; i++) {

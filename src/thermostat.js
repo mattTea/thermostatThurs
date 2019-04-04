@@ -34,6 +34,9 @@ Thermostat.prototype = {
 
   powerSavingOn: function () {
     this.powerSavingMode = true;
+    if (this._temperature > this.POWER_SAVING_MAX) {
+      this._temperature = this.POWER_SAVING_MAX
+    }
   },
 
   powerSavingOff: function() {
