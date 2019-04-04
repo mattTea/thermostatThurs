@@ -10,25 +10,25 @@ function Thermostat() {
 Thermostat.prototype = {
   constructor: Thermostat,
 
-  up: function(change) {
+  up: function() {
     if(this.powerSavingMode){
-      this._temperature + change > this.POWER_SAVING_MAX
+      this._temperature + 1 > this.POWER_SAVING_MAX
         ? this._temperature = this.POWER_SAVING_MAX
-        : this._temperature += change;
+        : this._temperature += 1;
     } else {
-      this._temperature + change > this.DEFAULT_MAXIMUM
+      this._temperature + 1 > this.DEFAULT_MAXIMUM
         ? this._temperature = this.DEFAULT_MAXIMUM
-        : this._temperature += change;
+        : this._temperature += 1;
     }
   },
 
-  down: function(change) {
-    this._temperature -= change;
+  down: function() {
+    this._temperature -= 1;
     if (this._temperature < this.DEFAULT_MINIMUM) return this._temperature = this.DEFAULT_MINIMUM;
     return this._temperature;
   },
 
-  setting: function() {
+  currentTemperature: function() {
     return this._temperature;
   },
 
