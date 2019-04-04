@@ -13,8 +13,17 @@ $(document).ready(function() {
 
   refreshValues();
 
-  $.get("http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=ad83bbf27660822a5ded0d83f34dc0b9", function(weatherResponse) {
+
+  $.get(`http://api.openweathermap.org/data/2.5/weather?q=${$("#choose-location").val()}&units=metric&APPID=ad83bbf27660822a5ded0d83f34dc0b9`, function(weatherResponse) {
     $("#temperature-outside").text(weatherResponse.main.temp);
+  });
+  // param from select list to interpolate into query string above (instead of q=London) 
+  // var selectedLocation = $("#choose-location").val()
+
+  $("#choose-location").change(function() {
+    $.get(`http://api.openweathermap.org/data/2.5/weather?q=${$("#choose-location").val()}&units=metric&APPID=ad83bbf27660822a5ded0d83f34dc0b9`, function(weatherResponse) {
+      $("#temperature-outside").text(weatherResponse.main.temp);
+    });
   });
 
   $("#up-button").click(function() {
