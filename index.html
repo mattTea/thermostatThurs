@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="src/thermostat.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="src/thermostat.js"></script>
+  <script type="text/javascript" src="src/index.js"></script>
 </head>
 
 
 <h1>Thermostat</h1>
 
-<h3>Setting: ...</h3>
+<h3>Current Temperature: <span id="current-temperature">loading...</span></h3>
 
 <h3>Energy Usage Level: ...</h3>
 
-<form>
-  <input type="submit" value="Up">
-</form>
-
-<form>
-  <input type="submit" value="Down">
-</form>
+<button id="up-button">Up</button>
+<button id="down-button">Down</button>
 
 <form>
   <input type="radio" name="power-saving" value="on"> Power Saving On <br>
